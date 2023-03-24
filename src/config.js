@@ -1,1 +1,1 @@
-export const FETCH_POST_URL =  "http://localhost:3000/posts/"
+export const FETCH_POST_URL =  "https://ejassignmentbackend-production.up.railway.app/posts"
