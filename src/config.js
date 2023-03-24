@@ -1,0 +1,1 @@
+export const FETCH_POST_URL =  "http://localhost:3000/posts/"
