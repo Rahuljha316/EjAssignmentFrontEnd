@@ -14,7 +14,6 @@ const ViewPost = () => {
   const getPost = async () => {
     try {
       const response = await axios.get(FETCH_POST_URL + id);
-      console.log(response.data);
 
       setPost(response.data);
     } catch (error) {

@@ -13,8 +13,6 @@ const Home = () => {
   const getAllPost = async () => {
     try {
       const response = await axios.get(FETCH_POST_URL);
-      console.log(response);
-      console.log(response.data);
 
       setPost([...response.data]);
     } catch (error) {
@@ -24,9 +22,8 @@ const Home = () => {
 
   const handleDeleteButtonClick = async (id) => {
     try {
-      console.log(id);
       const response = await axios.delete(FETCH_POST_URL + id);
-      console.log(response);
+
       window.confirm("post is deleted");
       window.location.reload();
     } catch (error) {
@@ -65,7 +62,10 @@ const Home = () => {
                   <button className="btn btn-warning mx-2">Edit</button>
                 </Link>
 
-                <button className="btn btn-danger" onClick={() => handleDeleteButtonClick(item.id)}>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => handleDeleteButtonClick(item.id)}
+                >
                   Delete
                 </button>
               </td>

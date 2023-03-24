@@ -15,7 +15,6 @@ const CreatePost = () => {
     try {
       const response = await axios.post(FETCH_POST_URL, payload);
 
-      console.log(response.data);
       window.alert("new post is created");
       navigate("/");
     } catch (error) {
@@ -34,7 +33,6 @@ const CreatePost = () => {
         </thead>
         <tbody>
           <tr>
-            
             <td>
               <input
                 type="text"
@@ -54,7 +52,12 @@ const CreatePost = () => {
           </tr>
         </tbody>
       </table>
-      <button className="btn btn-secondary" onClick={() => handleCreatePostButton()}>Create Post</button>
+      <button
+        className="btn btn-secondary"
+        onClick={() => handleCreatePostButton()}
+      >
+        Create Post
+      </button>
       <Link to="/">
         <button className="btn btn-secondary mx-4">Home</button>
       </Link>

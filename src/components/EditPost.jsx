@@ -19,7 +19,6 @@ const EditPost = () => {
   const getPost = async () => {
     try {
       const response = await axios.get(FETCH_POST_URL + id);
-      console.log(response.data);
 
       setContent(response.data.content);
       setTitle(response.data.title);
@@ -32,7 +31,7 @@ const EditPost = () => {
     const payload = { title, content };
     try {
       const response = await axios.put(FETCH_POST_URL + id, payload);
-      console.log(response.data);
+
       window.alert("post is updated");
       navigate("/");
     } catch (error) {
@@ -75,7 +74,9 @@ const EditPost = () => {
           </tr>
         </tbody>
       </table>
-      <button className="btn btn-secondary" onClick={() => SaveButtonClick()}>Save</button>
+      <button className="btn btn-secondary" onClick={() => SaveButtonClick()}>
+        Save
+      </button>
       <Link to="/">
         <button className="btn btn-secondary mx-2">Discard</button>
       </Link>
