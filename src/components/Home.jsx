@@ -34,11 +34,10 @@ const Home = () => {
     }
   };
 
-
   // if(!post) return null
   return (
     <div>
-      <table>
+      <table className="table table-hover">
         <thead>
           <tr>
             <th>id</th>
@@ -59,19 +58,14 @@ const Home = () => {
               <td>{item.createdAt}</td>
               <td>{item.updatedAt}</td>
               <td>
-                
-                <Link to={'/viewpost/'+item.id}>
-                  <button >
-                    View
-                  </button>
+                <Link to={"/viewpost/" + item.id}>
+                  <button className="btn btn-info">View</button>
                 </Link>
-                <Link to={'/editpost/'+item.id}>
-                  <button >
-                    Edit
-                  </button>
+                <Link to={"/editpost/" + item.id}>
+                  <button className="btn btn-warning mx-2">Edit</button>
                 </Link>
 
-                <button onClick={() => handleDeleteButtonClick(item.id)}>
+                <button className="btn btn-danger" onClick={() => handleDeleteButtonClick(item.id)}>
                   Delete
                 </button>
               </td>
@@ -80,7 +74,7 @@ const Home = () => {
         </tbody>
       </table>
       <Link to="/createpost">
-        <button>Create a New Post</button>
+        <button className="btn btn-secondary">Create a New Post</button>
       </Link>
     </div>
   );

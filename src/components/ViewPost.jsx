@@ -6,27 +6,25 @@ import { Link } from "react-router-dom";
 
 const ViewPost = () => {
   const { id } = useParams();
-  const [ post,setPost ] = useState([])
-  useEffect(()=>{
-    getPost()
-  },[])
-  
-  const getPost = async() =>{
-    try{
-        const response = await axios.get(FETCH_POST_URL+id)
-        console.log(response.data);
+  const [post, setPost] = useState([]);
+  useEffect(() => {
+    getPost();
+  }, []);
 
-        setPost(response.data)
+  const getPost = async () => {
+    try {
+      const response = await axios.get(FETCH_POST_URL + id);
+      console.log(response.data);
 
-    }catch (error) {
+      setPost(response.data);
+    } catch (error) {
       console.error(error);
     }
-  
-  }
+  };
 
   return (
     <div>
-      <table>
+      <table className="table table-hover">
         <thead>
           <tr>
             <th>id</th>
@@ -39,20 +37,17 @@ const ViewPost = () => {
         </thead>
 
         <tbody>
-          
-            <tr key={post.id}>
-              <td>{post.id}</td>
-              <td>{post.title}</td>
-              <td>{post.content}</td>
-              <td>{post.createdAt}</td>
-              <td>{post.updatedAt}</td>
-              
-            </tr>
-         
+          <tr key={post.id}>
+            <td>{post.id}</td>
+            <td>{post.title}</td>
+            <td>{post.content}</td>
+            <td>{post.createdAt}</td>
+            <td>{post.updatedAt}</td>
+          </tr>
         </tbody>
       </table>
       <Link to="/">
-        <button>Home</button>
+        <button className="btn btn-secondary">Home</button>
       </Link>
     </div>
   );

@@ -3,8 +3,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FETCH_POST_URL } from "../config";
 
-
-
 const CreatePost = () => {
   //   const [id, setId] = useState(0);
   const [title, setTitle] = useState("");
@@ -27,7 +25,7 @@ const CreatePost = () => {
 
   return (
     <div>
-      <table>
+      <table className="table table-hover">
         <thead>
           <tr>
             <th>title</th>
@@ -36,7 +34,7 @@ const CreatePost = () => {
         </thead>
         <tbody>
           <tr>
-            <td></td>
+            
             <td>
               <input
                 type="text"
@@ -56,9 +54,9 @@ const CreatePost = () => {
           </tr>
         </tbody>
       </table>
-      <button onClick={() => handleCreatePostButton()}>Create Post</button>
+      <button className="btn btn-secondary" onClick={() => handleCreatePostButton()}>Create Post</button>
       <Link to="/">
-        <button>Home</button>
+        <button className="btn btn-secondary mx-4">Home</button>
       </Link>
     </div>
   );

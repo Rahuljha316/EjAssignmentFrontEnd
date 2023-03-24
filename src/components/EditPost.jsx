@@ -42,7 +42,7 @@ const EditPost = () => {
 
   return (
     <div>
-      <table>
+      <table className="table table-hover">
         <thead>
           <tr>
             <th>id</th>
@@ -75,9 +75,9 @@ const EditPost = () => {
           </tr>
         </tbody>
       </table>
-      <button onClick={() => SaveButtonClick()}>Save</button>
+      <button className="btn btn-secondary" onClick={() => SaveButtonClick()}>Save</button>
       <Link to="/">
-        <button>Home</button>
+        <button className="btn btn-secondary mx-2">Discard</button>
       </Link>
     </div>
   );
